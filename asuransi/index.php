@@ -1,6 +1,3 @@
-<?php
-    //$judul;
-?>
 <html>
     <head>
         <title>HOME</title>
@@ -11,14 +8,7 @@
         <div id="keterangan">
            berisi logut, hak akses , anda berada di menu apa
         </div>
-        <div id="navigasi">
-            <ul>
-                <li><a href="#">HOME</a></li>
-                <li><a href="#">DSP</a></li>
-                <li><a href="#">NASABAH</a></li>
-                <li><a href="#">LAPORAN</a></li>
-            </ul>
-        </div>
+        <?php include "linkpage.php"; ?>
         <div id="outer">
             <div id="header">
                 <img src="css/images/bringinglife.jpg" />
