@@ -33,8 +33,8 @@
      
 
     
-    //proses memasukan ke tabel nasabah
-    $masuk_nasabah = mysql_query("INSERT into nasabah(no_spaj,
+    //proses memasukan ke tabel spaj
+    $masuk_nasabah = mysql_query("INSERT into spaj(no_spaj,
                                                       jenis_kartu,
                                                       nomor,
                                                       nama,
@@ -52,7 +52,8 @@
                                                       kode_pos,
                                                       warga,
                                                       asal,
-                                                      pekerjaan
+                                                      pekerjaan,
+                                                      tgl_catat
                                                       ) VALUES(
                                                       '$no_spaj',
                                                       '$jki',
@@ -72,14 +73,15 @@
                                                       $kd_pos,
                                                       '$kwn',
                                                       '$asl_neg',
-                                                      '$pkrjaan'
+                                                      '$pkrjaan',
+                                                      NOW()
                                                       )") or die(mysql_error());
     
      
     
-    //jika nasabah masuk, maka masuk juga ke spaj
+    //jika nasabah masuk, maka masuk juga ke nasabah
     if($masuk_nasabah){
-       $masuk_spaj = mysql_query("INSERT into spaj(no_spaj,
+       $masuk_spaj = mysql_query("INSERT into nasabah(no_spaj,
                                                     cara_bayar,
                                                     jup
                                                     ) VALUES(
@@ -88,7 +90,7 @@
                                                      $jml_tanggung
                                                     )") or die(mysql_error());
         
-        header("location:nasabah.php");
+        header("location:spaj.php");
         
 
     }

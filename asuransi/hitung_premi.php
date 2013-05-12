@@ -8,7 +8,6 @@
     $cr_byr   = $_GET['cr_byr'];
     $tgllahir = $_GET['tgllahir'];
     
-
 ?>
 <html>
     <head>
@@ -112,13 +111,9 @@
                  $materai      = 6000;
                  $jumlah_bayar = $premi+$materai;
                  
-                 
-                   
-           
-                   
                 ?> 
                 <div id="hasil_perhitungan">
-                    <h2>Data pertanggungan</h2>
+                    <h2>Data pertanggungan</h2>    
                     <table cellpadding="5">
                         <tr>
                             <td>Nama Tertanggungan</td>
@@ -152,7 +147,16 @@
                         </tr>
                         <tr>
                             <td colspan="3" align="right">
-                                <input type="submit" value="print" />
+                                <a href="print_ilustrasi_premi.php?spaj=<?php echo $no_spaj; ?>
+                                                   &nm=<?php echo $nama_nasabah; ?>
+                                                   &tgl=<?php echo $tgl_lahir; ?>
+                                                   &usia=<?php echo $usia; ?>
+                                                   &ms=<?php echo $masa; ?>
+                                                   &jup=<?php echo $jup; ?>
+                                                   &premi=<?php echo $jumlah_bayar; ?>" class="linkvalue">
+                                 Print
+                                </a>
+                                                   
                             </td>
                         </tr>
                     </table>

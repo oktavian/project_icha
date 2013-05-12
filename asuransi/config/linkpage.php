@@ -4,6 +4,6 @@
                 <li><a href="spaj.php">SPAJ</a></li>
                 <li><a href="nasabah.php">NASABAH</a></li>
                 <li><a href="dsp.php">DSP</a></li>
-                <li><a href="#">LAPORAN</a></li>
+                <li><a href="laporan.php">LAPORAN</a></li>
             </ul>
 </div>

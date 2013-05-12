@@ -106,12 +106,15 @@ th {
 
 #fm_nasabah {
     display: none;
+    width: 60%;
+}
+
+.fm_input {
     margin: 30px;
     padding: 10px;
     border: 3px solid black;
     border-radius: 10px;
     background-color: #60abf8;
-    width: 60%;
 }
 
 /***************** END HEADER *********************/
@@ -141,6 +144,20 @@ th {
 .dataTables_length, .dataTables_filter {
     margin-bottom: 5px;
 }
-
-
 /****************** END SPECIAL *************************/
+
+/****************** START SPECIAL ***********************/
+.linkvalue {
+    border: 1px solid black;
+    background: #4096ee;
+    padding: 3px 5px;
+}
+
+.linkvalue:hover {
+    background-color: #666666;
+}
+
+
+
+
+/***************** END SPECIAL *************************/
