@@ -4,14 +4,15 @@
     
     //ambil nomor spaj terhakir
     $ambil_spaj_terahkir = mysql_query("SELECT MAX(no_spaj) AS max_spaj FROM spaj");
-    $spaj_lama  = mysql_fetch_array($ambil_spaj_terahkir);
-    $max_spaj   = $spaj_lama['max_spaj'];
-    $pisah      = explode("-", $max_spaj); 
-    @$max_number = (int) $pisah[1];
-    $new_number = $max_number+1;
+    $spaj_lama           = mysql_fetch_array($ambil_spaj_terahkir);
+    $max_spaj            = $spaj_lama['max_spaj'];
+    $pisah               = explode("-", $max_spaj); 
+    @$max_number         = (int) $pisah[1];
+    $new_number          = $max_number+1;
+    
     //membentuk spaj terbaru, dengan 5 digit anggka dibelakan FM-, contoh : (FM-00005)
     $spaj_terbaru = "FM-".sprintf("%05s",$new_number);
-
+    
     //ambil data nasabah
     $ambil_nasabah = mysql_query("SELECT n.no_spaj AS no_spaj,
                                  n.nama AS nama_lengkap, 

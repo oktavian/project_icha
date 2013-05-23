@@ -7,9 +7,7 @@
         <?php include "config/head_file.php"; ?>
     </head>
     <body>
-        <div id="keterangan">
-           berisi logut, hak akses , anda berada di menu apa
-        </div>
+        <?php include "config/keterangan.php"; ?>
         <?php include "config/linkpage.php"; ?>
         <div id="outer">
             <div id="header">

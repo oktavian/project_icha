@@ -103,14 +103,15 @@
                    }
                    
                  //mengambil rate berdasarkan umur dari database  
-                 $rate      = mysql_query("SELECT*FROM rate WHERE umur='$usia' AND masa_asuransi='$masa'") or die(mysql_error());
+                 $rate      = mysql_query("SELECT*FROM rate WHERE umur=$usia AND masa_asuransi=$masa") or die(mysql_error());
                  $data_rate = mysql_fetch_array($rate);
-                 
+                
                  //rumus premi
-                 $premi        = $jup*$data_rate['rate']*$cara_bayar*0.001;
+                 $premi        = ($jup*$data_rate['rate']*$cb)/1000;
                  $materai      = 6000;
                  $jumlah_bayar = $premi+$materai;
                  
+                
                 ?> 
                 <div id="hasil_perhitungan">
                     <h2>Data pertanggungan</h2>    
@@ -139,6 +140,16 @@
                             <td>JUP</td>
                             <td>:</td>
                             <td><?php echo $jup; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Premi</td>
+                            <td>:</td>
+                            <td><?php echo $premi; ?></td>
+                        </tr>
+                        <tr>
+                            <td>Materai</td>
+                            <td>:</td>
+                            <td><?php echo $materai; ?></td>
                         </tr>
                         <tr>
                             <td>Total Bayar Premi</td>
